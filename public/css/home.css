@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+header nav {
+    width: 30%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li {
+    font-size: 2.5rem;
+}
+
+header nav ul li.active {
+    border: 1px solid white;
+    padding: 8px 35px;
+}
+
+.home__container {
+    z-index: 100;
+    color: white;
+    padding-left: 195px;
+    padding-right: 195px;
+    padding-top: 50px;
+}
+
+.home__container main {
+    display: flex;
+    height: 60vh;
+    margin-left: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__container main h1 {
+    font-weight: 200;
+    font-size: 7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.home__container main button {
+    margin-right: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-size: 2.5rem;
+    font-weight: 200;
+    padding: 15px 70px;
+}
+
+.home__container main .reserveer {
+    color: black;
+    background-color: white;
+}
+
+.home__container main .menu {
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-underline-offset: 10px;
+}
+
+.background {
+    background-image: url(../img/chef-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.background .overlay {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.3;
+}
+
+.modal-reserveren {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-reserveren .box {
+    background-color: white;
+    width: 545px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 40px 60px;
+}
+
+.modal-reserveren .box .header {
+    position: relative;
+}
+
+.modal-reserveren .box .header .close-reserveren {
+    position: absolute;
+    top: 13%;
+    right: 3%;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.modal-reserveren .box .header h1 {
+    font-weight: 400;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.modal-reserveren .box .header h1 span {
+    color: #7d402b;
+}
+
+.modal-reserveren .box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-reserveren .box form .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.modal-reserveren .box form .item p {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.modal-reserveren .box form .item input {
+    border: 1px solid #7d402b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+.modal-reserveren .box form button {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: #7d402b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    border: 1px solid #7d402b;
+    width: 50%;
+    align-self: flex-end;
+}
+
+.modal-reserveren .box form button:hover {
+    color: #7d402b;
+    background-color: white;
+}
+
+.modal-menukaart {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-menukaart .box {
+    background-color: white;
+    width: 815px;
+    height: 775px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 40px 100px;
+}
+
+.modal-menukaart .box .header {
+    text-align: center;
+}
+
+.modal-menukaart .box .header .x {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.modal-menukaart .box .header h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-menukaart .box .header h1 span {
+    color: #7d402b;
+}
+
+.modal-menukaart .box .header h4 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.modal-menukaart .box .header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.modal-menukaart .box .gerechten h3 {
+    color: #7d402b;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.modal-menukaart .box .gerechten p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.modal-menukaart .box .gerechten p:last-child {
+    margin-bottom: 20px;
+}
