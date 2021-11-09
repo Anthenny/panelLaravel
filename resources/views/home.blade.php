@@ -14,14 +14,22 @@
         <nav>
           <ul>
             <li class="active">
-              <a href="/home">Home</a>
+              <a href="{{ route('home') }}">Home</a>
+            </li>
+            @guest
+            <li>
+              <a href="{{ route('register') }}">Registreren</a>
             </li>
             <li>
-              <a href="/register">Registreren</a>
+              <a href="{{ route('login') }}">Login</a>
             </li>
-            <li>
-              <a href="/login">Login</a>
-            </li>
+            @endguest
+            @auth
+                <form action="{{ route('logout') }}" method="post">
+                    {{csrf_field()}} 
+                    <button type="submit">Uitloggen</button>
+                </form>
+            @endauth
           </ul>
         </nav> 
       </header>

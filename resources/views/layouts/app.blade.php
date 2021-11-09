@@ -50,7 +50,8 @@
             </div>
           </div>
   
-          <form class="logout" action="" method="post">
+          <form class="logout" action="{{ route('logout') }}" method="post">
+              {{csrf_field()}} 
               <img src="{{ asset('img/logout.png') }}" alt="logout" />
               <button class="hidden-text" type="submit" name="logout">Log out</button>         
           </form>

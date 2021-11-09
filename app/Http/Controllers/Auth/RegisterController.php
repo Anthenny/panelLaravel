@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['guest']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['guest']);
+    // }
 
     public function index()
     {
@@ -30,11 +30,18 @@ class RegisterController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'rol' => "klant",
             'password' => Hash::make($request->password)
         ]);
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dashboard');
+        if(auth()->user()->rol === "klant")
+        {
+            return redirect()->route('home');
+        } else if(auth()->user()->rol === "medewerker" or "admin")
+        {
+            return redirect()->route('dashboard');
+        } 
     }
 }
