@@ -21,26 +21,26 @@
           <div class="dashboard"> 
             <h3>Dashboard</h3>
             <div class="item">
-              <a href="">
+              <a href="{{ route('dashboard') }}">
                 <img class="hidden-img" src="{{ asset('img/home.png') }}" alt="icon" />
               </a>
-              <a class="hidden-text" href="">Home</a>
+              <a class="hidden-text" href="{{ route('dashboard') }}">Home</a>
             </div>
             <div class="item">
-              <a href="">
+              <a href="{{ route('home') }}">
                 <img class="hidden-img" src="{{ asset('img/restaurant.png') }}" alt="icon" />
               </a>
-              <a class="hidden-text" href="">Ga naar restaurant </a>
+              <a class="hidden-text" href="{{ route('home') }}">Ga naar restaurant </a>
             </div>
           </div>
   
           <div class="quick-menu">
             <h3>Quick Menu</h3>
             <div class="item">
-              <a href="">
+              <a href="{{ route('staff') }}">
                 <img class="hidden-img" src="{{ asset('img/person.png') }}" alt="icon" />
               </a>
-              <a class="hidden-text" href="">Personeel</a>
+              <a class="hidden-text" href="{{ route('staff') }}">Personeel</a>
             </div>
             <div class="item">
               <a href="">
@@ -59,5 +59,7 @@
       </div>
 
       @yield('content')
+
+      <script src="{{ asset('js/modalPersoneel.js') }}"></script>
   </body>
 </html>

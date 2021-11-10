@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,6 +23,13 @@ Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/dashboard', function() {
     return view('beheerder.dashboard');
 })->name('dashboard');
+
+Route::get('/staff', [StaffController::class, 'index'])->name('staff');
+Route::post('/staff', [StaffController::class, 'store'])->name('make_staff');
+
+Route::get('/editstaff/{id}', [StaffController::class, 'edit'])->name('editstaff');
+Route::put('/user/{id}', [StaffController::class, 'update'])->name('updatestaff');
+Route::delete('/delete/{user}', [StaffController::class, 'destroy'])->name('deletestaff');
 
 // home
 Route::get('/', function () {
