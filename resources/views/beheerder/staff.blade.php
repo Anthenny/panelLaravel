@@ -71,7 +71,7 @@
 
             <div class="item">
                 <p>Rol</p>
-                <input type="text" name="rol" value="{{ old('email') }}" />
+                <input type="text" name="rol" value="{{ old('rol') }}" />
                 @error('rol')
                 <div class="error">
                     {{ $message }}
@@ -103,6 +103,5 @@
         </form>
         </div>
     </div>
-    {{-- <script src="../js/modalPersoneel.js"></script> --}}
 
 @endsection

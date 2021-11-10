@@ -43,10 +43,10 @@
               <a class="hidden-text" href="{{ route('staff') }}">Personeel</a>
             </div>
             <div class="item">
-              <a href="">
+              <a href="{{ route('delivery') }}">
                 <img class="hidden-img" src="{{ asset('img/levering.png') }}" alt="icon" />
               </a>
-              <a class="hidden-text" href="">Leveringen</a>
+              <a class="hidden-text" href="{{ route('delivery') }}">Leveringen</a>
             </div>
           </div>
   
